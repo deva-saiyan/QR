@@ -1,0 +1,918 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="AJ Kalai Associates - Insurance, Mutual Funds, Consultancy and Legal Advice">
+
+    <title>AJ KALAI ASSOCIATES | Digital Service Enquiry</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container header-content">
+
+            <div class="brand">
+                <div class="brand-icon">AJ</div>
+
+                <div>
+                    <h1>AJ KALAI ASSOCIATES</h1>
+                    <p>KALAISELVAM A</p>
+                </div>
+            </div>
+
+            <div class="contact-top">
+                <a href="tel:9655379510">📞 96 55 37 95 10</a>
+                <a href="tel:8807321230">📞 88 07 32 12 30</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <span class="badge">DIGITAL SERVICE ENQUIRY</span>
+
+                <h2>
+                    Your Trusted Partner for
+                    <span>Financial & Protection Services</span>
+                </h2>
+
+                <p>
+                    Choose a service below and submit your enquiry.
+                    Our team will contact you shortly.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#services" class="primary-btn">
+                        Explore Services
+                    </a>
+
+                    <a href="tel:9655379510" class="secondary-btn">
+                        📞 Call Us
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-card-icon">AJ</div>
+
+                <h3>AJ KALAI ASSOCIATES</h3>
+
+                <p>
+                    Insurance • Investments • Consultancy • Legal Advice
+                </p>
+
+                <div class="phone-box">
+                    <span>📱</span>
+                    <div>
+                        <strong>96 55 37 95 10</strong>
+                        <strong>88 07 32 12 30</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+    <section class="services-section" id="services">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">OUR SERVICES</span>
+
+                <h2>
+                    How can we help you?
+                </h2>
+
+                <p>
+                    Select any service to submit your enquiry.
+                </p>
+            </div>
+
+
+            <div class="services-grid">
+
+                <!-- HEALTH -->
+                <button class="service-card"
+                        onclick="openForm('health')">
+
+                    <div class="service-icon health">
+                        🏥
+                    </div>
+
+                    <div>
+                        <h3>Health Insurance</h3>
+                        <p>
+                            Protect yourself and your family
+                            with suitable health coverage.
+                        </p>
+                    </div>
+
+                    <span class="arrow">→</span>
+                </button>
+
+
+                <!-- LIFE -->
+                <button class="service-card"
+                        onclick="openForm('life')">
+
+                    <div class="service-icon life">
+                        ❤️
+                    </div>
+
+                    <div>
+                        <h3>Life Insurance</h3>
+                        <p>
+                            Secure your family's financial future.
+                        </p>
+                    </div>
+
+                    <span class="arrow">→</span>
+                </button>
+
+
+                <!-- MOTOR -->
+                <button class="service-card"
+                        onclick="openForm('motor')">
+
+                    <div class="service-icon motor">
+                        🚗
+                    </div>
+
+                    <div>
+                        <h3>Motor Insurance</h3>
+                        <p>
+                            Insurance support for your vehicle.
+                        </p>
+                    </div>
+
+                    <span class="arrow">→</span>
+                </button>
+
+
+                <!-- MUTUAL FUNDS -->
+                <button class="service-card"
+                        onclick="openForm('mutual')">
+
+                    <div class="service-icon mutual">
+                        📈
+                    </div>
+
+                    <div>
+                        <h3>Mutual Funds</h3>
+                        <p>
+                            Start investing towards your financial goals.
+                        </p>
+                    </div>
+
+                    <span class="arrow">→</span>
+                </button>
+
+
+                <!-- CONSULTANCY -->
+                <button class="service-card"
+                        onclick="openForm('consultancy')">
+
+                    <div class="service-icon consultancy">
+                        💼
+                    </div>
+
+                    <div>
+                        <h3>Consultancy</h3>
+                        <p>
+                            Get professional career and
+                            consultancy guidance.
+                        </p>
+                    </div>
+
+                    <span class="arrow">→</span>
+                </button>
+
+
+                <!-- LEGAL -->
+                <button class="service-card"
+                        onclick="openForm('legal')">
+
+                    <div class="service-icon legal">
+                        ⚖️
+                    </div>
+
+                    <div>
+                        <h3>Legal Advice</h3>
+                        <p>
+                            Discuss your legal requirements
+                            with our team.
+                        </p>
+                    </div>
+
+                    <span class="arrow">→</span>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= FORM SECTION ================= -->
+    <section class="form-section hidden" id="formSection">
+
+        <div class="container">
+
+            <button class="back-btn"
+                    onclick="closeForm()">
+                ← Back to Services
+            </button>
+
+
+            <div class="form-wrapper">
+
+                <div class="form-header">
+
+                    <div class="form-service-icon"
+                         id="formIcon">
+                        🏥
+                    </div>
+
+                    <div>
+                        <span class="section-label">
+                            ENQUIRY FORM
+                        </span>
+
+                        <h2 id="formTitle">
+                            Health Insurance
+                        </h2>
+
+                        <p id="formDescription">
+                            Tell us your requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="enquiryForm">
+
+                    <!-- SERVICE TYPE -->
+                    <input type="hidden"
+                           id="serviceType"
+                           name="service">
+
+
+                    <!-- ================= HEALTH ================= -->
+                    <div id="healthForm"
+                         class="service-form hidden">
+
+                        <h3 class="form-section-title">
+                            Self Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label>
+                                    Gender <span>*</span>
+                                </label>
+
+                                <div class="radio-group">
+
+                                    <label class="radio-option">
+                                        <input type="radio"
+                                               name="healthGender"
+                                               value="Male"
+                                               required>
+                                        Male
+                                    </label>
+
+                                    <label class="radio-option">
+                                        <input type="radio"
+                                               name="healthGender"
+                                               value="Female">
+                                        Female
+                                    </label>
+
+                                </div>
+                            </div>
+
+
+                            <div class="field">
+                                <label for="healthDob">
+                                    Date of Birth <span>*</span>
+                                </label>
+
+                                <input type="date"
+                                       id="healthDob"
+                                       name="healthDob">
+                            </div>
+
+                        </div>
+
+
+                        <h3 class="form-section-title">
+                            Spouse Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field full">
+                                <label for="spouseDob">
+                                    Spouse Date of Birth
+                                </label>
+
+                                <input type="date"
+                                       id="spouseDob"
+                                       name="spouseDob">
+                            </div>
+
+                        </div>
+
+
+                        <h3 class="form-section-title">
+                            Children Details
+                        </h3>
+
+                        <!-- SONS -->
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="numberOfSons">
+                                    Number of Sons
+                                </label>
+
+                                <select id="numberOfSons"
+                                        name="numberOfSons"
+                                        onchange="updateChildrenFields()">
+
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div id="sonFields"></div>
+
+
+                        <!-- DAUGHTERS -->
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="numberOfDaughters">
+                                    Number of Daughters
+                                </label>
+
+                                <select id="numberOfDaughters"
+                                        name="numberOfDaughters"
+                                        onchange="updateChildrenFields()">
+
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div id="daughterFields"></div>
+
+
+                        <h3 class="form-section-title">
+                            Contact Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="healthPincode">
+                                    Pincode <span>*</span>
+                                </label>
+
+                                <input type="text"
+                                       id="healthPincode"
+                                       name="healthPincode"
+                                       maxlength="6"
+                                       inputmode="numeric"
+                                       placeholder="Enter 6-digit pincode">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="healthMobile">
+                                    Mobile Number <span>*</span>
+                                </label>
+
+                                <input type="tel"
+                                       id="healthMobile"
+                                       name="healthMobile"
+                                       maxlength="10"
+                                       inputmode="numeric"
+                                       placeholder="Enter mobile number">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= LIFE ================= -->
+                    <div id="lifeForm"
+                         class="service-form hidden">
+
+                        <h3 class="form-section-title">
+                            Life Insurance Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="lifeName">
+                                    Name <span>*</span>
+                                </label>
+
+                                <input type="text"
+                                       id="lifeName"
+                                       name="lifeName"
+                                       placeholder="Enter your name">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="lifeDob">
+                                    Date of Birth <span>*</span>
+                                </label>
+
+                                <input type="date"
+                                       id="lifeDob"
+                                       name="lifeDob">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="lifeMobile">
+                                    Mobile Number <span>*</span>
+                                </label>
+
+                                <input type="tel"
+                                       id="lifeMobile"
+                                       name="lifeMobile"
+                                       maxlength="10"
+                                       inputmode="numeric"
+                                       placeholder="Enter mobile number">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="coverage">
+                                    Expected Coverage <span>*</span>
+                                </label>
+
+                                <select id="coverage"
+                                        name="coverage">
+
+                                    <option value="">
+                                        Select Coverage
+                                    </option>
+
+                                    <option>₹50 Lakhs</option>
+                                    <option>₹1 Crore</option>
+                                    <option>₹2 Crores</option>
+                                    <option>₹3 Crores</option>
+                                    <option>Other</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= MOTOR ================= -->
+                    <div id="motorForm"
+                         class="service-form hidden">
+
+                        <h3 class="form-section-title">
+                            Motor Insurance Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="motorName">
+                                    Name <span>*</span>
+                                </label>
+
+                                <input type="text"
+                                       id="motorName"
+                                       name="motorName"
+                                       placeholder="Enter your name">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="motorMobile">
+                                    Mobile Number <span>*</span>
+                                </label>
+
+                                <input type="tel"
+                                       id="motorMobile"
+                                       name="motorMobile"
+                                       maxlength="10"
+                                       inputmode="numeric"
+                                       placeholder="Enter mobile number">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="vehicleType">
+                                    Vehicle Type <span>*</span>
+                                </label>
+
+                                <select id="vehicleType"
+                                        name="vehicleType">
+
+                                    <option value="">
+                                        Select Vehicle
+                                    </option>
+
+                                    <option>Two Wheeler</option>
+                                    <option>Car</option>
+                                    <option>Commercial Vehicle</option>
+
+                                </select>
+                            </div>
+
+
+                            <div class="field">
+                                <label for="registrationNumber">
+                                    Vehicle Registration Number <span>*</span>
+                                </label>
+
+                                <input type="text"
+                                       id="registrationNumber"
+                                       name="registrationNumber"
+                                       placeholder="Example: TN01AB1234">
+                            </div>
+
+
+                            <div class="field full">
+                                <label for="policyExpiry">
+                                    Policy Expiry Date <span>*</span>
+                                </label>
+
+                                <input type="date"
+                                       id="policyExpiry"
+                                       name="policyExpiry">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= MUTUAL FUNDS ================= -->
+                    <div id="mutualForm"
+                         class="service-form hidden">
+
+                        <h3 class="form-section-title">
+                            Mutual Funds Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="mutualName">
+                                    Name <span>*</span>
+                                </label>
+
+                                <input type="text"
+                                       id="mutualName"
+                                       name="mutualName"
+                                       placeholder="Enter your name">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="mutualDob">
+                                    Date of Birth <span>*</span>
+                                </label>
+
+                                <input type="date"
+                                       id="mutualDob"
+                                       name="mutualDob">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="mutualMobile">
+                                    Mobile Number <span>*</span>
+                                </label>
+
+                                <input type="tel"
+                                       id="mutualMobile"
+                                       name="mutualMobile"
+                                       maxlength="10"
+                                       inputmode="numeric"
+                                       placeholder="Enter mobile number">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="sipAmount">
+                                    Monthly SIP Amount <span>*</span>
+                                </label>
+
+                                <select id="sipAmount"
+                                        name="sipAmount">
+
+                                    <option value="">
+                                        Select SIP Amount
+                                    </option>
+
+                                    <option>₹500</option>
+                                    <option>₹1,000</option>
+                                    <option>₹2,000</option>
+                                    <option>₹5,000</option>
+                                    <option>₹10,000+</option>
+                                    <option>Other</option>
+
+                                </select>
+                            </div>
+
+
+                            <div class="field full">
+                                <label for="investmentGoal">
+                                    Investment Goal <span>*</span>
+                                </label>
+
+                                <select id="investmentGoal"
+                                        name="investmentGoal">
+
+                                    <option value="">
+                                        Select Goal
+                                    </option>
+
+                                    <option>Wealth Creation</option>
+                                    <option>Child Education</option>
+                                    <option>Retirement</option>
+                                    <option>Other</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= CONSULTANCY ================= -->
+                    <div id="consultancyForm"
+                         class="service-form hidden">
+
+                        <h3 class="form-section-title">
+                            Consultancy Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="consultName">
+                                    Name <span>*</span>
+                                </label>
+
+                                <input type="text"
+                                       id="consultName"
+                                       name="consultName"
+                                       placeholder="Enter your name">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="consultMobile">
+                                    Mobile Number <span>*</span>
+                                </label>
+
+                                <input type="tel"
+                                       id="consultMobile"
+                                       name="consultMobile"
+                                       maxlength="10"
+                                       inputmode="numeric"
+                                       placeholder="Enter mobile number">
+                            </div>
+
+
+                            <div class="field full">
+                                <label for="profession">
+                                    Job / Profession <span>*</span>
+                                </label>
+
+                                <select id="profession"
+                                        name="profession">
+
+                                    <option value="">
+                                        Select Profession
+                                    </option>
+
+                                    <option>IT</option>
+                                    <option>Non-IT</option>
+                                    <option>Teaching</option>
+                                    <option>Business</option>
+                                    <option>Government</option>
+                                    <option>Abroad</option>
+                                    <option>Other</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= LEGAL ================= -->
+                    <div id="legalForm"
+                         class="service-form hidden">
+
+                        <h3 class="form-section-title">
+                            Legal Advice Details
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label for="legalName">
+                                    Name <span>*</span>
+                                </label>
+
+                                <input type="text"
+                                       id="legalName"
+                                       name="legalName"
+                                       placeholder="Enter your name">
+                            </div>
+
+
+                            <div class="field">
+                                <label for="legalMobile">
+                                    Mobile Number <span>*</span>
+                                </label>
+
+                                <input type="tel"
+                                       id="legalMobile"
+                                       name="legalMobile"
+                                       maxlength="10"
+                                       inputmode="numeric"
+                                       placeholder="Enter mobile number">
+                            </div>
+
+
+                            <div class="field full">
+                                <label for="legalRequirement">
+                                    Legal Requirement <span>*</span>
+                                </label>
+
+                                <select id="legalRequirement"
+                                        name="legalRequirement">
+
+                                    <option value="">
+                                        Select Requirement
+                                    </option>
+
+                                    <option>Property</option>
+                                    <option>Civil</option>
+                                    <option>Criminal</option>
+                                    <option>Family</option>
+                                    <option>Documentation</option>
+                                    <option>Other</option>
+
+                                </select>
+                            </div>
+
+
+                            <div class="field full">
+                                <label for="legalDescription">
+                                    Briefly Explain Your Requirement
+                                    <span>*</span>
+                                </label>
+
+                                <textarea id="legalDescription"
+                                          name="legalDescription"
+                                          rows="5"
+                                          placeholder="Please describe your requirement..."></textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= SUBMIT ================= -->
+                    <div class="form-footer">
+
+                        <p class="privacy-note">
+                            🔒 Your information is collected only
+                            for responding to your enquiry.
+                        </p>
+
+                        <button type="submit"
+                                class="submit-btn">
+
+                            SUBMIT ENQUIRY
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= SUCCESS MODAL ================= -->
+    <div class="modal-overlay hidden"
+         id="successModal">
+
+        <div class="success-modal">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Enquiry Submitted!</h2>
+
+            <p>
+                Thank you for contacting
+                <strong>AJ KALAI ASSOCIATES</strong>.
+            </p>
+
+            <p>
+                Our team will contact you shortly.
+            </p>
+
+            <button class="primary-btn"
+                    onclick="closeSuccessModal()">
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <h3>AJ KALAI ASSOCIATES</h3>
+
+            <p>
+                KALAISELVAM A
+            </p>
+
+            <div class="footer-contact">
+                <a href="tel:9655379510">
+                    📞 96 55 37 95 10
+                </a>
+
+                <a href="tel:8807321230">
+                    📞 88 07 32 12 30
+                </a>
+            </div>
+
+            <p class="copyright">
+                © 2026 AJ KALAI ASSOCIATES. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
