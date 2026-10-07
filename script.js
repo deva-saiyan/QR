@@ -1,613 +1,708 @@
+/* ==========================================================
+   AJ KALAI ASSOCIATES
+   Custom HTML Forms
+   → Google Forms
+   → Google Sheets
+   ========================================================== */
 
-const serviceInfo = {
+
+/* ==========================================================
+   GOOGLE FORM CONFIGURATION
+   ========================================================== */
+
+const GOOGLE_FORMS = {
+
+    /* ======================================================
+       HEALTH INSURANCE
+       ====================================================== */
 
     health: {
-        title: "Health Insurance",
-        icon: "🏥",
-        description:
-            "Protect yourself and your family with suitable health coverage."
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdGmQ5HoBpfvFnlUL6tk7Z1yZHZLXMk6DC00fY96E33LO5urg/formResponse",
+
+        fields: {
+            name: "entry.1449005772",
+            gender: "entry.1685270148",
+            selfDob: "entry.1960516808",
+            spouseDob: "entry.1842912509",
+
+            // Child DOB IDs were not present in the
+            // pre-filled link, so leave them unmapped for now.
+
+            son1Dob: null,
+            son2Dob: null,
+            daughter1Dob: null,
+            daughter2Dob: null,
+
+            pincode: "entry.628104915",
+            mobile: "entry.1120204368"
+        }
     },
+
+
+    /* ======================================================
+       LIFE INSURANCE
+       ====================================================== */
 
     life: {
-        title: "Life Insurance",
-        icon: "❤️",
-        description:
-            "Secure your family's financial future."
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdyURwpoQ4Nn3r9dgImEcO1jv29hTddqVZI6HoagbwaBfglMg/formResponse",
+
+        fields: {
+            name: "entry.726004286",
+            dob: "entry.959984559",
+            mobile: "entry.393130259",
+            coverage: "entry.1906449228"
+        }
     },
+
+
+    /* ======================================================
+       MOTOR INSURANCE
+       ====================================================== */
 
     motor: {
-        title: "Motor Insurance",
-        icon: "🚗",
-        description:
-            "Get insurance support for your vehicle."
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdP4KZEscQvUlVAPLKjFY6HY3a1V--HfzHsUlsS0iFUDqP4Yw/formResponse",
+
+        fields: {
+            name: "entry.2092238618",
+            mobile: "entry.1556369182",
+            vehicleType: "entry.479301265",
+            registration: "entry.1753222212",
+            expiry: "entry.588393791"
+        }
     },
+
+
+    /* ======================================================
+       MUTUAL FUNDS
+       ====================================================== */
 
     mutual: {
-        title: "Mutual Funds",
-        icon: "📈",
-        description:
-            "Start investing towards your financial goals."
+        url: "https://docs.google.com/forms/d/e/1FAIpQLScUTTCKMWgisguRU9e-Nb6DirDVIWrT9nTKwEeSKJy1PegEbw/formResponse",
+
+        fields: {
+            name: "entry.1213373070",
+            dob: "entry.1869690058",
+            mobile: "entry.952409558",
+            sip: "entry.1717212747",
+            goal: "entry.1522553132"
+        }
     },
+
+
+    /* ======================================================
+       CONSULTANCY
+       ====================================================== */
 
     consultancy: {
-        title: "Consultancy",
-        icon: "💼",
-        description:
-            "Get professional career and consultancy guidance."
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdGZYaCWHSuib-wKq8QTNcblN8P4wzXtRWjPovbu2xE_sLXUQ/formResponse",
+
+        fields: {
+            name: "entry.1000057",
+            mobile: "entry.1000027",
+            profession: "entry.967112212"
+        }
     },
 
+
+    /* ======================================================
+       LEGAL ADVICE
+       ====================================================== */
+
     legal: {
-        title: "Legal Advice",
-        icon: "⚖️",
-        description:
-            "Discuss your legal requirements with our team."
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSf6-cgMAAHDJnMx8ccGXKSVlqukIwiIsacK4LcQPefzGzMkVA/formResponse",
+
+        fields: {
+            name: "entry.559352220",
+            mobile: "entry.877086558",
+            requirement: "entry.924523986",
+            description: "entry.186230675"
+        }
     }
 
 };
 
 
-/* =========================================
-   OPEN SERVICE FORM
-========================================= */
+/* ==========================================================
+   HEALTH INSURANCE
+   DYNAMIC CHILD FIELDS
+   ========================================================== */
 
-function openForm(service) {
+function updateChildrenFields(type) {
 
-    const info = serviceInfo[service];
+    const countElement = document.getElementById(
+        type === "son" ? "sonCount" : "daughterCount"
+    );
 
-    if (!info) {
+    const container = document.getElementById(
+        type === "son" ? "sonFields" : "daughterFields"
+    );
+
+    if (!countElement || !container) {
         return;
     }
 
-    // Hide services section
-    document.getElementById("services")
-        .classList.add("hidden");
+    const count = parseInt(
+        countElement.value || "0",
+        10
+    );
 
-    // Show form section
-    document.getElementById("formSection")
-        .classList.remove("hidden");
+    container.innerHTML = "";
 
-    // Update form header
-    document.getElementById("formTitle")
-        .textContent = info.title;
+    for (let i = 1; i <= count; i++) {
 
-    document.getElementById("formDescription")
-        .textContent = info.description;
+        const wrapper = document.createElement("div");
 
-    document.getElementById("formIcon")
-        .textContent = info.icon;
-
-    document.getElementById("serviceType")
-        .value = info.title;
-
-
-    // Hide all service forms
-    document.querySelectorAll(".service-form")
-        .forEach(form => {
-            form.classList.add("hidden");
-        });
-
-
-    // Show selected service form
-    const selectedForm =
-        document.getElementById(service + "Form");
-
-    if (selectedForm) {
-        selectedForm.classList.remove("hidden");
-    }
-
-
-    // Scroll to form
-    document.getElementById("formSection")
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-}
-
-
-/* =========================================
-   CLOSE FORM
-========================================= */
-
-function closeForm() {
-
-    document.getElementById("formSection")
-        .classList.add("hidden");
-
-    document.getElementById("services")
-        .classList.remove("hidden");
-
-    document.getElementById("services")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-}
-
-
-/* =========================================
-   DYNAMIC CHILD FIELDS
-========================================= */
-
-function updateChildrenFields() {
-
-    const numberOfSons =
-        parseInt(
-            document.getElementById("numberOfSons").value
-        );
-
-    const numberOfDaughters =
-        parseInt(
-            document.getElementById("numberOfDaughters").value
-        );
-
-
-    const sonContainer =
-        document.getElementById("sonFields");
-
-    const daughterContainer =
-        document.getElementById("daughterFields");
-
-
-    /* -------------------------
-       SONS
-    ------------------------- */
-
-    sonContainer.innerHTML = "";
-
-    for (let i = 1; i <= numberOfSons; i++) {
-
-        const wrapper =
-            document.createElement("div");
-
-        wrapper.className = "child-field";
+        wrapper.className = "form-group";
 
         wrapper.innerHTML = `
-            <label for="son${i}Dob">
-                Son ${i} - Date of Birth
+            <label>
+                ${type === "son" ? "Son" : "Daughter"} ${i} DOB
             </label>
 
             <input
                 type="date"
-                id="son${i}Dob"
-                name="son${i}Dob"
+                name="${type}${i}Dob"
             >
         `;
 
-        sonContainer.appendChild(wrapper);
-    }
-
-
-    /* -------------------------
-       DAUGHTERS
-    ------------------------- */
-
-    daughterContainer.innerHTML = "";
-
-    for (let i = 1; i <= numberOfDaughters; i++) {
-
-        const wrapper =
-            document.createElement("div");
-
-        wrapper.className = "child-field";
-
-        wrapper.innerHTML = `
-            <label for="daughter${i}Dob">
-                Daughter ${i} - Date of Birth
-            </label>
-
-            <input
-                type="date"
-                id="daughter${i}Dob"
-                name="daughter${i}Dob"
-            >
-        `;
-
-        daughterContainer.appendChild(wrapper);
+        container.appendChild(wrapper);
     }
 }
 
 
-/* =========================================
-   MOBILE NUMBER VALIDATION
-========================================= */
+/* ==========================================================
+   VALIDATION
+   ========================================================== */
 
-function isValidMobile(number) {
+function validateMobile(mobile) {
 
-    return /^[6-9]\d{9}$/.test(number);
+    return /^[6-9]\d{9}$/.test(
+        mobile.trim()
+    );
 }
 
 
-/* =========================================
-   PINCODE VALIDATION
-========================================= */
+function validatePincode(pincode) {
 
-function isValidPincode(pincode) {
-
-    return /^\d{6}$/.test(pincode);
+    return /^\d{6}$/.test(
+        pincode.trim()
+    );
 }
 
 
-/* =========================================
-   FORM VALIDATION
-========================================= */
+/* ==========================================================
+   CHECK GOOGLE FORM CONFIGURATION
+   ========================================================== */
 
-function validateForm(service) {
+function isGoogleFormConfigured(service) {
 
-    let valid = true;
+    const config = GOOGLE_FORMS[service];
 
+    if (!config) {
+        return false;
+    }
 
-    /* HEALTH */
+    if (
+        !config.url ||
+        !config.url.endsWith("/formResponse")
+    ) {
+        return false;
+    }
 
-    if (service === "Health Insurance") {
+    for (const key in config.fields) {
 
-        const gender =
-            document.querySelector(
-                'input[name="healthGender"]:checked'
-            );
+        const fieldId = config.fields[key];
 
-        const dob =
-            document.getElementById("healthDob").value;
+        /*
+         * null is allowed for currently unmapped
+         * optional health child DOB fields.
+         */
 
-        const pincode =
-            document.getElementById("healthPincode").value.trim();
-
-        const mobile =
-            document.getElementById("healthMobile").value.trim();
-
-
-        if (!gender) {
-            alert("Please select your gender.");
-            return false;
+        if (fieldId === null) {
+            continue;
         }
 
-
-        if (!dob) {
-            alert("Please select your date of birth.");
-            return false;
-        }
-
-
-        if (!isValidPincode(pincode)) {
-            alert("Please enter a valid 6-digit pincode.");
-            return false;
-        }
-
-
-        if (!isValidMobile(mobile)) {
-            alert("Please enter a valid 10-digit mobile number.");
+        if (
+            !fieldId ||
+            !fieldId.startsWith("entry.")
+        ) {
             return false;
         }
     }
 
-
-    /* LIFE */
-
-    if (service === "Life Insurance") {
-
-        const name =
-            document.getElementById("lifeName").value.trim();
-
-        const dob =
-            document.getElementById("lifeDob").value;
-
-        const mobile =
-            document.getElementById("lifeMobile").value.trim();
-
-        const coverage =
-            document.getElementById("coverage").value;
-
-
-        if (!name) {
-            alert("Please enter your name.");
-            return false;
-        }
-
-        if (!dob) {
-            alert("Please select your date of birth.");
-            return false;
-        }
-
-        if (!isValidMobile(mobile)) {
-            alert("Please enter a valid 10-digit mobile number.");
-            return false;
-        }
-
-        if (!coverage) {
-            alert("Please select expected coverage.");
-            return false;
-        }
-    }
-
-
-    /* MOTOR */
-
-    if (service === "Motor Insurance") {
-
-        const name =
-            document.getElementById("motorName").value.trim();
-
-        const mobile =
-            document.getElementById("motorMobile").value.trim();
-
-        const vehicle =
-            document.getElementById("vehicleType").value;
-
-        const registration =
-            document.getElementById("registrationNumber")
-                .value.trim();
-
-        const expiry =
-            document.getElementById("policyExpiry").value;
-
-
-        if (!name) {
-            alert("Please enter your name.");
-            return false;
-        }
-
-        if (!isValidMobile(mobile)) {
-            alert("Please enter a valid 10-digit mobile number.");
-            return false;
-        }
-
-        if (!vehicle) {
-            alert("Please select your vehicle type.");
-            return false;
-        }
-
-        if (!registration) {
-            alert("Please enter vehicle registration number.");
-            return false;
-        }
-
-        if (!expiry) {
-            alert("Please select policy expiry date.");
-            return false;
-        }
-    }
-
-
-    /* MUTUAL FUNDS */
-
-    if (service === "Mutual Funds") {
-
-        const name =
-            document.getElementById("mutualName").value.trim();
-
-        const dob =
-            document.getElementById("mutualDob").value;
-
-        const mobile =
-            document.getElementById("mutualMobile").value.trim();
-
-        const sip =
-            document.getElementById("sipAmount").value;
-
-        const goal =
-            document.getElementById("investmentGoal").value;
-
-
-        if (!name) {
-            alert("Please enter your name.");
-            return false;
-        }
-
-        if (!dob) {
-            alert("Please select your date of birth.");
-            return false;
-        }
-
-        if (!isValidMobile(mobile)) {
-            alert("Please enter a valid 10-digit mobile number.");
-            return false;
-        }
-
-        if (!sip) {
-            alert("Please select your monthly SIP amount.");
-            return false;
-        }
-
-        if (!goal) {
-            alert("Please select your investment goal.");
-            return false;
-        }
-    }
-
-
-    /* CONSULTANCY */
-
-    if (service === "Consultancy") {
-
-        const name =
-            document.getElementById("consultName").value.trim();
-
-        const mobile =
-            document.getElementById("consultMobile").value.trim();
-
-        const profession =
-            document.getElementById("profession").value;
-
-
-        if (!name) {
-            alert("Please enter your name.");
-            return false;
-        }
-
-        if (!isValidMobile(mobile)) {
-            alert("Please enter a valid 10-digit mobile number.");
-            return false;
-        }
-
-        if (!profession) {
-            alert("Please select your profession.");
-            return false;
-        }
-    }
-
-
-    /* LEGAL */
-
-    if (service === "Legal Advice") {
-
-        const name =
-            document.getElementById("legalName").value.trim();
-
-        const mobile =
-            document.getElementById("legalMobile").value.trim();
-
-        const requirement =
-            document.getElementById("legalRequirement").value;
-
-        const description =
-            document.getElementById("legalDescription")
-                .value.trim();
-
-
-        if (!name) {
-            alert("Please enter your name.");
-            return false;
-        }
-
-        if (!isValidMobile(mobile)) {
-            alert("Please enter a valid 10-digit mobile number.");
-            return false;
-        }
-
-        if (!requirement) {
-            alert("Please select your legal requirement.");
-            return false;
-        }
-
-        if (!description) {
-            alert("Please briefly explain your requirement.");
-            return false;
-        }
-    }
-
-
-    return valid;
+    return true;
 }
 
 
-/* =========================================
-   FORM SUBMISSION
-========================================= */
+/* ==========================================================
+   SUBMIT TO GOOGLE FORM
+   ========================================================== */
 
-document.getElementById("enquiryForm")
-    .addEventListener("submit", function (event) {
+function submitToGoogleForm(service, formData) {
 
-        event.preventDefault();
+    const config = GOOGLE_FORMS[service];
+
+    if (!isGoogleFormConfigured(service)) {
+
+        showSuccess(
+            "Google Form configuration is incomplete.",
+            true
+        );
+
+        return false;
+    }
 
 
-        const service =
-            document.getElementById("serviceType").value;
+    /* ------------------------------------------------------
+       Hidden iframe
+       ------------------------------------------------------ */
+
+    let iframe =
+        document.getElementById(
+            "googleFormSubmitFrame"
+        );
+
+    if (!iframe) {
+
+        iframe =
+            document.createElement("iframe");
+
+        iframe.id =
+            "googleFormSubmitFrame";
+
+        iframe.name =
+            "googleFormSubmitFrame";
+
+        iframe.style.display =
+            "none";
+
+        document.body.appendChild(iframe);
+    }
 
 
-        // Validate
-        if (!validateForm(service)) {
+    /* ------------------------------------------------------
+       Temporary Google Form
+       ------------------------------------------------------ */
+
+    const googleForm =
+        document.createElement("form");
+
+    googleForm.method =
+        "POST";
+
+    googleForm.action =
+        config.url;
+
+    googleForm.target =
+        "googleFormSubmitFrame";
+
+    googleForm.style.display =
+        "none";
+
+
+    /* ------------------------------------------------------
+       Add Google Form fields
+       ------------------------------------------------------ */
+
+    Object.keys(formData).forEach(key => {
+
+        const entryId =
+            config.fields[key];
+
+        /*
+         * Ignore fields that do not have a Google Form
+         * mapping.
+         */
+
+        if (!entryId) {
             return;
         }
 
+        const input =
+            document.createElement("input");
 
-        /*
-         * FRONTEND ONLY
-         *
-         * No database or server is connected here.
-         * Later this section can send the form
-         * data to Google Forms, Formspree,
-         * Google Apps Script, Django, etc.
-         */
+        input.type =
+            "hidden";
 
+        input.name =
+            entryId;
 
-        console.log(
-            "Enquiry submitted:",
-            service
-        );
+        input.value =
+            formData[key] ?? "";
 
-
-        // Show success popup
-        document.getElementById("successModal")
-            .classList.remove("hidden");
-
-
-        // Reset form
-        this.reset();
-
-
-        // Reset dynamic child fields
-        document.getElementById("sonFields")
-            .innerHTML = "";
-
-        document.getElementById("daughterFields")
-            .innerHTML = "";
-
-        document.getElementById("numberOfSons")
-            .value = "0";
-
-        document.getElementById("numberOfDaughters")
-            .value = "0";
+        googleForm.appendChild(input);
 
     });
 
 
-/* =========================================
-   SUCCESS MODAL
-========================================= */
+    document.body.appendChild(
+        googleForm
+    );
 
-function closeSuccessModal() {
 
-    document.getElementById("successModal")
-        .classList.add("hidden");
+    /* ------------------------------------------------------
+       Submit
+       ------------------------------------------------------ */
 
-    closeForm();
+    googleForm.submit();
+
+
+    /* ------------------------------------------------------
+       Remove temporary form
+       ------------------------------------------------------ */
+
+    setTimeout(() => {
+
+        googleForm.remove();
+
+    }, 2000);
+
+
+    return true;
 }
 
 
-/* =========================================
-   INPUT RESTRICTIONS
-========================================= */
+/* ==========================================================
+   SUCCESS / ERROR MESSAGE
+   ========================================================== */
 
-document.addEventListener("input", function (event) {
+function showSuccess(
+    message,
+    isError = false
+) {
 
-    const target = event.target;
+    const messageBox =
+        document.getElementById(
+            "successMessage"
+        );
 
+    if (!messageBox) {
 
-    // Mobile number
-    if (target.type === "tel") {
+        alert(message);
 
-        target.value =
-            target.value.replace(/\D/g, "")
-                .slice(0, 10);
+        return;
     }
 
 
-    // Pincode
-    if (target.id === "healthPincode") {
+    messageBox.textContent =
+        message;
 
-        target.value =
-            target.value.replace(/\D/g, "")
-                .slice(0, 6);
+    messageBox.style.display =
+        "block";
+
+
+    if (isError) {
+
+        messageBox.classList.add(
+            "error"
+        );
+
+    } else {
+
+        messageBox.classList.remove(
+            "error"
+        );
+    }
+}
+
+
+/* ==========================================================
+   RESET FORM
+   ========================================================== */
+
+function resetServiceForm(form) {
+
+    form.reset();
+
+
+    const sonFields =
+        document.getElementById(
+            "sonFields"
+        );
+
+    const daughterFields =
+        document.getElementById(
+            "daughterFields"
+        );
+
+
+    if (sonFields) {
+        sonFields.innerHTML = "";
     }
 
 
-    // Vehicle registration
-    if (target.id === "registrationNumber") {
-
-        target.value =
-            target.value
-                .toUpperCase()
-                .replace(/[^A-Z0-9]/g, "");
+    if (daughterFields) {
+        daughterFields.innerHTML = "";
     }
+}
 
-});
+
+/* ==========================================================
+   MAIN FORM HANDLER
+   ========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
 
-/* =========================================
-   INITIALIZE
-========================================= */
+        const forms =
+            document.querySelectorAll(
+                ".service-form"
+            );
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    updateChildrenFields();
+        forms.forEach(form => {
 
-});
+            form.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const service =
+                        form.dataset.service;
+
+
+                    if (!GOOGLE_FORMS[service]) {
+
+                        showSuccess(
+                            "Invalid service configuration.",
+                            true
+                        );
+
+                        return;
+                    }
+
+
+                    /* --------------------------------------
+                       Collect form data
+                       -------------------------------------- */
+
+                    const formData = {};
+
+
+                    const inputs =
+                        form.querySelectorAll(
+                            "input, select, textarea"
+                        );
+
+
+                    inputs.forEach(input => {
+
+                        if (!input.name) {
+                            return;
+                        }
+
+
+                        if (
+                            input.type === "radio" &&
+                            !input.checked
+                        ) {
+                            return;
+                        }
+
+
+                        if (
+                            input.type === "checkbox" &&
+                            !input.checked
+                        ) {
+                            return;
+                        }
+
+
+                        formData[input.name] =
+                            input.value.trim();
+
+                    });
+
+
+                    /* --------------------------------------
+                       Mobile validation
+                       -------------------------------------- */
+
+                    if (formData.mobile) {
+
+                        if (
+                            !validateMobile(
+                                formData.mobile
+                            )
+                        ) {
+
+                            showSuccess(
+                                "Please enter a valid 10-digit mobile number.",
+                                true
+                            );
+
+                            return;
+                        }
+                    }
+
+
+                    /* --------------------------------------
+                       Pincode validation
+                       -------------------------------------- */
+
+                    if (formData.pincode) {
+
+                        if (
+                            !validatePincode(
+                                formData.pincode
+                            )
+                        ) {
+
+                            showSuccess(
+                                "Please enter a valid 6-digit pincode.",
+                                true
+                            );
+
+                            return;
+                        }
+                    }
+
+
+                    /* --------------------------------------
+                       Submit
+                       -------------------------------------- */
+
+                    const submitted =
+                        submitToGoogleForm(
+                            service,
+                            formData
+                        );
+
+
+                    if (!submitted) {
+                        return;
+                    }
+
+
+                    /* --------------------------------------
+                       Success message
+                       -------------------------------------- */
+
+                    showSuccess(
+                        "Thank you! Your enquiry has been submitted successfully."
+                    );
+
+
+                    /* --------------------------------------
+                       Reset after submission
+                       -------------------------------------- */
+
+                    setTimeout(() => {
+
+                        resetServiceForm(form);
+
+                    }, 1200);
+
+                }
+            );
+
+        });
+
+
+        /* ==================================================
+           HEALTH - SON COUNT
+           ================================================== */
+
+        const sonCount =
+            document.getElementById(
+                "sonCount"
+            );
+
+
+        if (sonCount) {
+
+            sonCount.addEventListener(
+                "change",
+                function () {
+
+                    updateChildrenFields(
+                        "son"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ==================================================
+           HEALTH - DAUGHTER COUNT
+           ================================================== */
+
+        const daughterCount =
+            document.getElementById(
+                "daughterCount"
+            );
+
+
+        if (daughterCount) {
+
+            daughterCount.addEventListener(
+                "change",
+                function () {
+
+                    updateChildrenFields(
+                        "daughter"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ==================================================
+           MOBILE INPUT
+           ================================================== */
+
+        document
+            .querySelectorAll(
+                'input[name="mobile"]'
+            )
+            .forEach(input => {
+
+                input.addEventListener(
+                    "input",
+                    function () {
+
+                        this.value =
+                            this.value
+                                .replace(/\D/g, "")
+                                .slice(0, 10);
+
+                    }
+                );
+
+            });
+
+
+        /* ==================================================
+           PINCODE INPUT
+           ================================================== */
+
+        document
+            .querySelectorAll(
+                'input[name="pincode"]'
+            )
+            .forEach(input => {
+
+                input.addEventListener(
+                    "input",
+                    function () {
+
+                        this.value =
+                            this.value
+                                .replace(/\D/g, "")
+                                .slice(0, 6);
+
+                    }
+                );
+
+            });
+
+    }
+);

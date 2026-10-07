@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mutual Funds | AJ KALAI ASSOCIATES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="form-page">
+
+    <div class="form-container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Services
+        </a>
+
+        <h1>📈 Mutual Funds</h1>
+
+        <p class="subtitle">
+            Tell us about your investment goals.
+        </p>
+
+
+        <div
+            id="successMessage"
+            class="success-message"
+        ></div>
+
+
+        <form
+            class="service-form"
+            data-service="mutual"
+        >
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="dob">
+                    Date of Birth
+                </label>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    maxlength="10"
+                    inputmode="numeric"
+                    placeholder="Enter 10-digit mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="sip">
+                    Monthly SIP Amount
+                </label>
+
+                <select
+                    id="sip"
+                    name="sip"
+                    required
+                >
+
+                    <option value="">
+                        Select SIP Amount
+                    </option>
+
+                    <option value="₹500">
+                        ₹500
+                    </option>
+
+                    <option value="₹1,000">
+                        ₹1,000
+                    </option>
+
+                    <option value="₹2,000">
+                        ₹2,000
+                    </option>
+
+                    <option value="₹5,000">
+                        ₹5,000
+                    </option>
+
+                    <option value="₹10,000+">
+                        ₹10,000+
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="goal">
+                    Investment Goal
+                </label>
+
+                <select
+                    id="goal"
+                    name="goal"
+                    required
+                >
+
+                    <option value="">
+                        Select Investment Goal
+                    </option>
+
+                    <option value="Wealth Creation">
+                        Wealth Creation
+                    </option>
+
+                    <option value="Child Education">
+                        Child Education
+                    </option>
+
+                    <option value="Retirement">
+                        Retirement
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Mutual Fund Enquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

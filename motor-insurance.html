@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Motor Insurance | AJ KALAI ASSOCIATES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="form-page">
+
+    <div class="form-container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Services
+        </a>
+
+        <h1>🚗 Motor Insurance</h1>
+
+        <p class="subtitle">
+            Submit your vehicle insurance requirement.
+        </p>
+
+
+        <div
+            id="successMessage"
+            class="success-message"
+        ></div>
+
+
+        <form
+            class="service-form"
+            data-service="motor"
+        >
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    maxlength="10"
+                    inputmode="numeric"
+                    placeholder="Enter 10-digit mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="vehicleType">
+                    Vehicle Type
+                </label>
+
+                <select
+                    id="vehicleType"
+                    name="vehicleType"
+                    required
+                >
+
+                    <option value="">
+                        Select Vehicle Type
+                    </option>
+
+                    <option value="Two Wheeler">
+                        Two Wheeler
+                    </option>
+
+                    <option value="Car">
+                        Car
+                    </option>
+
+                    <option value="Commercial Vehicle">
+                        Commercial Vehicle
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="registration">
+                    Vehicle Registration Number
+                </label>
+
+                <input
+                    type="text"
+                    id="registration"
+                    name="registration"
+                    placeholder="Example: TN01AB1234"
+                    style="text-transform: uppercase;"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="expiry">
+                    Policy Expiry Date
+                </label>
+
+                <input
+                    type="date"
+                    id="expiry"
+                    name="expiry"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Motor Insurance Enquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

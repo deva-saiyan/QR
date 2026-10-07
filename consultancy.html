@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Consultancy | AJ KALAI ASSOCIATES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="form-page">
+
+    <div class="form-container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Services
+        </a>
+
+        <h1>💼 Consultancy</h1>
+
+        <p class="subtitle">
+            Tell us about your profession and consultancy requirement.
+        </p>
+
+
+        <div
+            id="successMessage"
+            class="success-message"
+        ></div>
+
+
+        <form
+            class="service-form"
+            data-service="consultancy"
+        >
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    maxlength="10"
+                    inputmode="numeric"
+                    placeholder="Enter 10-digit mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="profession">
+                    Job / Profession
+                </label>
+
+                <select
+                    id="profession"
+                    name="profession"
+                    required
+                >
+
+                    <option value="">
+                        Select Profession
+                    </option>
+
+                    <option value="IT">
+                        IT
+                    </option>
+
+                    <option value="Non-IT">
+                        Non-IT
+                    </option>
+
+                    <option value="Teaching">
+                        Teaching
+                    </option>
+
+                    <option value="Business">
+                        Business
+                    </option>
+
+                    <option value="Government">
+                        Government
+                    </option>
+
+                    <option value="Abroad">
+                        Abroad
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Consultancy Enquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

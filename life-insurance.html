@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Life Insurance | AJ KALAI ASSOCIATES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="form-page">
+
+    <div class="form-container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Services
+        </a>
+
+        <h1>❤️ Life Insurance</h1>
+
+        <p class="subtitle">
+            Tell us about your life insurance requirement.
+        </p>
+
+
+        <div
+            id="successMessage"
+            class="success-message"
+        ></div>
+
+
+        <form
+            class="service-form"
+            data-service="life"
+        >
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="dob">
+                    Date of Birth
+                </label>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    maxlength="10"
+                    inputmode="numeric"
+                    placeholder="Enter 10-digit mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="coverage">
+                    Expected Coverage
+                </label>
+
+                <select
+                    id="coverage"
+                    name="coverage"
+                    required
+                >
+
+                    <option value="">
+                        Select Coverage
+                    </option>
+
+                    <option value="₹50 Lakhs">
+                        ₹50 Lakhs
+                    </option>
+
+                    <option value="₹1 Crore">
+                        ₹1 Crore
+                    </option>
+
+                    <option value="₹2 Crores">
+                        ₹2 Crores
+                    </option>
+
+                    <option value="₹3 Crores">
+                        ₹3 Crores
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Life Insurance Enquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Legal Advice | AJ KALAI ASSOCIATES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="form-page">
+
+    <div class="form-container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Services
+        </a>
+
+        <h1>⚖️ Legal Advice</h1>
+
+        <p class="subtitle">
+            Tell us about your legal requirement.
+            Our team will contact you.
+        </p>
+
+
+        <div
+            id="successMessage"
+            class="success-message"
+        ></div>
+
+
+        <form
+            class="service-form"
+            data-service="legal"
+        >
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    maxlength="10"
+                    inputmode="numeric"
+                    placeholder="Enter 10-digit mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="requirement">
+                    Legal Requirement
+                </label>
+
+                <select
+                    id="requirement"
+                    name="requirement"
+                    required
+                >
+
+                    <option value="">
+                        Select Legal Requirement
+                    </option>
+
+                    <option value="Property">
+                        Property
+                    </option>
+
+                    <option value="Civil">
+                        Civil
+                    </option>
+
+                    <option value="Criminal">
+                        Criminal
+                    </option>
+
+                    <option value="Family">
+                        Family
+                    </option>
+
+                    <option value="Documentation">
+                        Documentation
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="description">
+                    Briefly Explain Your Requirement
+                </label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Explain your requirement..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Legal Enquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
