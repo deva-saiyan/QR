@@ -445,6 +445,25 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
 
+        /* --------------------------------------------------
+           Show thank-you popup after returning to home page
+           -------------------------------------------------- */
+
+        const submittedMessage =
+            sessionStorage.getItem("formSubmitted");
+
+        if (submittedMessage) {
+
+            sessionStorage.removeItem("formSubmitted");
+
+            setTimeout(() => {
+
+                alert("🎉 " + submittedMessage);
+
+            }, 300);
+
+        }
+
 
         const forms =
             document.querySelectorAll(
@@ -579,23 +598,22 @@ document.addEventListener(
 
 
                     /* --------------------------------------
-                       Success message
-                       -------------------------------------- */
-
-                    showSuccess(
-                        "Thank you! Your enquiry has been submitted successfully."
-                    );
-
-
-                    /* --------------------------------------
-                       Reset after submission
+                       Submit successful
                        -------------------------------------- */
 
                     setTimeout(() => {
 
-                        resetServiceForm(form);
+                        // Save message for home page
+                        sessionStorage.setItem(
+                            "formSubmitted",
+                            "Thank you! Your form has been submitted successfully."
+                        );
 
-                    }, 1200);
+                        // Go back to home page
+                        window.location.href =
+                            "index.html";
+
+                    }, 1000);
 
                 }
             );
