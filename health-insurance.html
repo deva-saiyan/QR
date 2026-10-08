@@ -1,200 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Health Insurance | AJ KALAI ASSOCIATES</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <title>Health Insurance - AJ KALAI ASSOCIATES</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f6fb;
+            color: #1f2937;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .form-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+            color: #111827;
+        }
+
+        .header p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+            background: #ffffff;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .section-title {
+            margin: 28px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 18px;
+            color: #111827;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin-top: 10px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .note {
+            margin-top: 15px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        #successMessage {
+            display: none;
+            margin-bottom: 18px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: #dcfce7;
+            color: #166534;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        #successMessage.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                margin: 15px auto;
+                padding: 12px;
+            }
+
+            .form-card {
+                padding: 22px 18px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<section class="form-page">
+    <div class="container">
 
-    <div class="form-container">
+        <div class="form-card">
 
-        <a href="index.html" class="back-link">
-            ← Back to Services
-        </a>
+            <div class="header">
 
-        <h1>🏥 Health Insurance</h1>
+                <h1>Health Insurance</h1>
 
-        <p class="subtitle">
-            Enter your family details to enquire about health insurance.
-        </p>
-
-        <div id="successMessage" class="success-message"></div>
-
-        <form class="service-form" data-service="health">
-
-            <div class="form-group">
-                <label for="name">Name</label>
-
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your name"
-                    required
-                >
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="gender">
-                    Self - Gender
-                </label>
-
-                <select
-                    id="gender"
-                    name="gender"
-                    required
-                >
-                    <option value="">
-                        Select Gender
-                    </option>
-
-                    <option value="Male">
-                        Male
-                    </option>
-
-                    <option value="Female">
-                        Female
-                    </option>
-                </select>
+                <p>
+                    Please provide the following details
+                    for your health insurance enquiry.
+                </p>
 
             </div>
 
 
-            <div class="form-group">
+            <!-- Success / Error Message -->
 
-                <label for="selfDob">
-                    Self - Date of Birth
-                </label>
-
-                <input
-                    type="date"
-                    id="selfDob"
-                    name="selfDob"
-                    required
-                >
-
-            </div>
+            <div id="successMessage"></div>
 
 
-            <div class="form-group">
+            <!-- ==================================================
+                 HEALTH INSURANCE FORM
+                 ================================================== -->
 
-                <label for="spouseDob">
-                    Spouse - Date of Birth
-                </label>
-
-                <input
-                    type="date"
-                    id="spouseDob"
-                    name="spouseDob"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="sonCount">
-                    Number of Sons
-                </label>
-
-                <select
-                    id="sonCount"
-                    name="sonCount"
-                >
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-
-            </div>
-
-
-            <div id="sonFields" class="dynamic-fields"></div>
-
-
-            <div class="form-group">
-
-                <label for="daughterCount">
-                    Number of Daughters
-                </label>
-
-                <select
-                    id="daughterCount"
-                    name="daughterCount"
-                >
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-
-            </div>
-
-
-            <div id="daughterFields" class="dynamic-fields"></div>
-
-
-            <div class="form-group">
-
-                <label for="pincode">
-                    Pincode
-                </label>
-
-                <input
-                    type="text"
-                    id="pincode"
-                    name="pincode"
-                    maxlength="6"
-                    inputmode="numeric"
-                    placeholder="Enter 6-digit pincode"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="mobile">
-                    Mobile Number
-                </label>
-
-                <input
-                    type="tel"
-                    id="mobile"
-                    name="mobile"
-                    maxlength="10"
-                    inputmode="numeric"
-                    placeholder="Enter 10-digit mobile number"
-                    required
-                >
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="submit-btn"
+            <form
+                class="service-form"
+                data-service="health"
+                novalidate
             >
-                Submit Health Enquiry
-            </button>
 
-        </form>
+
+                <!-- ===============================
+                     PERSONAL DETAILS
+                     =============================== -->
+
+                <h2 class="section-title">
+                    Personal Details
+                </h2>
+
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Gender -->
+
+                <div class="form-group">
+
+                    <label for="gender">
+                        Gender
+                    </label>
+
+                    <select
+                        id="gender"
+                        name="gender"
+                        required
+                    >
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DOB -->
+
+                <div class="row">
+
+                    <div class="form-group">
+
+                        <label for="selfDob">
+                            Your Date of Birth
+                        </label>
+
+                        <input
+                            type="date"
+                            id="selfDob"
+                            name="selfDob"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="spouseDob">
+                            Spouse Date of Birth
+                        </label>
+
+                        <input
+                            type="date"
+                            id="spouseDob"
+                            name="spouseDob"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===============================
+                     CHILDREN DETAILS
+                     =============================== -->
+
+                <h2 class="section-title">
+                    Children Details
+                </h2>
+
+
+                <!-- Son Count -->
+
+                <div class="form-group">
+
+                    <label for="sonCount">
+                        Number of Sons
+                    </label>
+
+                    <input
+                        type="number"
+                        id="sonCount"
+                        name="sonCount"
+                        min="0"
+                        max="2"
+                        step="1"
+                        value="0"
+                        inputmode="numeric"
+                    >
+
+                </div>
+
+
+                <!-- Daughter Count -->
+
+                <div class="form-group">
+
+                    <label for="daughterCount">
+                        Number of Daughters
+                    </label>
+
+                    <input
+                        type="number"
+                        id="daughterCount"
+                        name="daughterCount"
+                        min="0"
+                        max="2"
+                        step="1"
+                        value="0"
+                        inputmode="numeric"
+                    >
+
+                </div>
+
+
+                <!-- ===============================
+                     CONTACT DETAILS
+                     =============================== -->
+
+                <h2 class="section-title">
+                    Contact Details
+                </h2>
+
+
+                <!-- Pincode -->
+
+                <div class="form-group">
+
+                    <label for="pincode">
+                        Pincode
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pincode"
+                        name="pincode"
+                        placeholder="Enter 6-digit pincode"
+                        inputmode="numeric"
+                        maxlength="6"
+                        pattern="[0-9]{6}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Mobile -->
+
+                <div class="form-group">
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Enter 10-digit mobile number"
+                        inputmode="numeric"
+                        maxlength="10"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Submit Enquiry
+                </button>
+
+
+                <div class="note">
+
+                    Your details are submitted securely
+                    for enquiry purposes.
+
+                </div>
+
+            </form>
+
+        </div>
 
     </div>
 
-</section>
 
-<script src="script.js"></script>
+    <!-- ======================================================
+         JAVASCRIPT
+         ====================================================== -->
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
 

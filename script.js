@@ -1,8 +1,26 @@
 /* ==========================================================
    AJ KALAI ASSOCIATES
    Custom HTML Forms
-   → Google Forms
-   → Google Sheets
+   HTML Form
+        ↓
+   Google Form
+        ↓
+   Google Sheets
+
+   SERVICES:
+   1. Health Insurance
+   2. Life Insurance
+   3. Motor Insurance
+   4. Mutual Funds
+   5. Consultancy
+   6. Legal Advice
+
+   IMPORTANT:
+   Health Insurance contains ONLY:
+   - Son Count
+   - Daughter Count
+
+   Child DOB fields are completely removed.
    ========================================================== */
 
 
@@ -17,24 +35,35 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     health: {
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdGmQ5HoBpfvFnlUL6tk7Z1yZHZLXMk6DC00fY96E33LO5urg/formResponse",
+
+        url:
+            "https://docs.google.com/forms/d/e/1FAIpQLSdGmQ5HoBpfvFnlUL6tk7Z1yZHZLXMk6DC00fY96E33LO5urg/formResponse",
 
         fields: {
-            name: "entry.1449005772",
-            gender: "entry.1685270148",
-            selfDob: "entry.1960516808",
-            spouseDob: "entry.1842912509",
 
-            // Child DOB IDs were not present in the
-            // pre-filled link, so leave them unmapped for now.
+            name:
+                "entry.1449005772",
 
-            son1Dob: null,
-            son2Dob: null,
-            daughter1Dob: null,
-            daughter2Dob: null,
+            gender:
+                "entry.1685270148",
 
-            pincode: "entry.628104915",
-            mobile: "entry.1120204368"
+            selfDob:
+                "entry.1960516808",
+
+            spouseDob:
+                "entry.1842912509",
+
+            sonCount:
+                "entry.1693510977",
+
+            daughterCount:
+                "entry.262002855",
+
+            pincode:
+                "entry.628104915",
+
+            mobile:
+                "entry.1120204368"
         }
     },
 
@@ -44,13 +73,23 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     life: {
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdyURwpoQ4Nn3r9dgImEcO1jv29hTddqVZI6HoagbwaBfglMg/formResponse",
+
+        url:
+            "https://docs.google.com/forms/d/e/1FAIpQLSdyURwpoQ4Nn3r9dgImEcO1jv29hTddqVZI6HoagbwaBfglMg/formResponse",
 
         fields: {
-            name: "entry.726004286",
-            dob: "entry.959984559",
-            mobile: "entry.393130259",
-            coverage: "entry.1906449228"
+
+            name:
+                "entry.726004286",
+
+            dob:
+                "entry.959984559",
+
+            mobile:
+                "entry.393130259",
+
+            coverage:
+                "entry.1906449228"
         }
     },
 
@@ -60,14 +99,26 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     motor: {
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdP4KZEscQvUlVAPLKjFY6HY3a1V--HfzHsUlsS0iFUDqP4Yw/formResponse",
+
+        url:
+            "https://docs.google.com/forms/d/e/1FAIpQLSdP4KZEscQvUlVAPLKjFY6HY3a1V--HfzHsUlsS0iFUDqP4Yw/formResponse",
 
         fields: {
-            name: "entry.2092238618",
-            mobile: "entry.1556369182",
-            vehicleType: "entry.479301265",
-            registration: "entry.1753222212",
-            expiry: "entry.588393791"
+
+            name:
+                "entry.2092238618",
+
+            mobile:
+                "entry.1556369182",
+
+            vehicleType:
+                "entry.479301265",
+
+            registration:
+                "entry.1753222212",
+
+            expiry:
+                "entry.588393791"
         }
     },
 
@@ -77,14 +128,26 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     mutual: {
-        url: "https://docs.google.com/forms/d/e/1FAIpQLScUTTCKMWgisguRU9e-Nb6DirDVIWrT9nTKwEeSKJy1PegEbw/formResponse",
+
+        url:
+            "https://docs.google.com/forms/d/e/1FAIpQLScUTTCKMWgisguRU9e-Nb6DirDVIWrT9nTKwEeSKJy1PegEbw/formResponse",
 
         fields: {
-            name: "entry.1213373070",
-            dob: "entry.1869690058",
-            mobile: "entry.952409558",
-            sip: "entry.1717212747",
-            goal: "entry.1522553132"
+
+            name:
+                "entry.1213373070",
+
+            dob:
+                "entry.1869690058",
+
+            mobile:
+                "entry.952409558",
+
+            sip:
+                "entry.1717212747",
+
+            goal:
+                "entry.1522553132"
         }
     },
 
@@ -94,12 +157,20 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     consultancy: {
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdGZYaCWHSuib-wKq8QTNcblN8P4wzXtRWjPovbu2xE_sLXUQ/formResponse",
+
+        url:
+            "https://docs.google.com/forms/d/e/1FAIpQLSdGZYaCWHSuib-wKq8QTNcblN8P4wzXtRWjPovbu2xE_sLXUQ/formResponse",
 
         fields: {
-            name: "entry.1000057",
-            mobile: "entry.1000027",
-            profession: "entry.967112212"
+
+            name:
+                "entry.1000057",
+
+            mobile:
+                "entry.1000027",
+
+            profession:
+                "entry.967112212"
         }
     },
 
@@ -109,13 +180,23 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     legal: {
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSf6-cgMAAHDJnMx8ccGXKSVlqukIwiIsacK4LcQPefzGzMkVA/formResponse",
+
+        url:
+            "https://docs.google.com/forms/d/e/1FAIpQLSf6-cgMAAHDJnMx8ccGXKSVlqukIwiIsacK4LcQPefzGzMkVA/formResponse",
 
         fields: {
-            name: "entry.559352220",
-            mobile: "entry.877086558",
-            requirement: "entry.924523986",
-            description: "entry.186230675"
+
+            name:
+                "entry.559352220",
+
+            mobile:
+                "entry.877086558",
+
+            requirement:
+                "entry.924523986",
+
+            description:
+                "entry.186230675"
         }
     }
 
@@ -123,80 +204,48 @@ const GOOGLE_FORMS = {
 
 
 /* ==========================================================
-   HEALTH INSURANCE
-   DYNAMIC CHILD FIELDS
+   CONSTANTS
    ========================================================== */
 
-function updateChildrenFields(type) {
+const SUBMISSION_STORAGE_KEY =
+    "formSubmitted";
 
-    const countElement = document.getElementById(
-        type === "son" ? "sonCount" : "daughterCount"
-    );
-
-    const container = document.getElementById(
-        type === "son" ? "sonFields" : "daughterFields"
-    );
-
-    if (!countElement || !container) {
-        return;
-    }
-
-    const count = parseInt(
-        countElement.value || "0",
-        10
-    );
-
-    container.innerHTML = "";
-
-    for (let i = 1; i <= count; i++) {
-
-        const wrapper = document.createElement("div");
-
-        wrapper.className = "form-group";
-
-        wrapper.innerHTML = `
-            <label>
-                ${type === "son" ? "Son" : "Daughter"} ${i} DOB
-            </label>
-
-            <input
-                type="date"
-                name="${type}${i}Dob"
-            >
-        `;
-
-        container.appendChild(wrapper);
-    }
-}
+const HOME_PAGE =
+    "index.html";
 
 
 /* ==========================================================
-   VALIDATION
+   VALIDATE MOBILE
    ========================================================== */
 
 function validateMobile(mobile) {
 
     return /^[6-9]\d{9}$/.test(
-        mobile.trim()
-    );
-}
-
-
-function validatePincode(pincode) {
-
-    return /^\d{6}$/.test(
-        pincode.trim()
+        String(mobile || "").trim()
     );
 }
 
 
 /* ==========================================================
-   CHECK GOOGLE FORM CONFIGURATION
+   VALIDATE PINCODE
+   ========================================================== */
+
+function validatePincode(pincode) {
+
+    return /^\d{6}$/.test(
+        String(pincode || "").trim()
+    );
+}
+
+
+/* ==========================================================
+   GOOGLE FORM CONFIGURATION CHECK
    ========================================================== */
 
 function isGoogleFormConfigured(service) {
 
-    const config = GOOGLE_FORMS[service];
+    const config =
+        GOOGLE_FORMS[service];
 
     if (!config) {
         return false;
@@ -209,22 +258,21 @@ function isGoogleFormConfigured(service) {
         return false;
     }
 
+    if (!config.fields) {
+        return false;
+    }
+
     for (const key in config.fields) {
 
-        const fieldId = config.fields[key];
+        const entryId =
+            config.fields[key];
 
-        /*
-         * null is allowed for currently unmapped
-         * optional health child DOB fields.
-         */
-
-        if (fieldId === null) {
-            continue;
+        if (!entryId) {
+            return false;
         }
 
         if (
-            !fieldId ||
-            !fieldId.startsWith("entry.")
+            !entryId.startsWith("entry.")
         ) {
             return false;
         }
@@ -235,14 +283,143 @@ function isGoogleFormConfigured(service) {
 
 
 /* ==========================================================
+   CREATE HIDDEN IFRAME
+   ========================================================== */
+
+function getGoogleFormIframe() {
+
+    let iframe =
+        document.getElementById(
+            "googleFormSubmitFrame"
+        );
+
+    if (iframe) {
+        return iframe;
+    }
+
+    iframe =
+        document.createElement("iframe");
+
+    iframe.id =
+        "googleFormSubmitFrame";
+
+    iframe.name =
+        "googleFormSubmitFrame";
+
+    iframe.style.position =
+        "fixed";
+
+    iframe.style.width =
+        "1px";
+
+    iframe.style.height =
+        "1px";
+
+    iframe.style.border =
+        "0";
+
+    iframe.style.opacity =
+        "0";
+
+    iframe.style.pointerEvents =
+        "none";
+
+    document.body.appendChild(
+        iframe
+    );
+
+    return iframe;
+}
+
+
+/* ==========================================================
+   COLLECT FORM DATA
+   ========================================================== */
+
+function collectFormData(form) {
+
+    const data = {};
+
+    const elements =
+        form.querySelectorAll(
+            "input[name], select[name], textarea[name]"
+        );
+
+    elements.forEach(element => {
+
+        const name =
+            element.name;
+
+        if (!name) {
+            return;
+        }
+
+
+        /* Radio button */
+
+        if (
+            element.type === "radio"
+        ) {
+
+            if (element.checked) {
+
+                data[name] =
+                    element.value;
+            }
+
+            return;
+        }
+
+
+        /* Checkbox */
+
+        if (
+            element.type === "checkbox"
+        ) {
+
+            if (element.checked) {
+
+                if (!data[name]) {
+                    data[name] = [];
+                }
+
+                data[name].push(
+                    element.value
+                );
+            }
+
+            return;
+        }
+
+
+        /* Normal input */
+
+        data[name] =
+            element.value;
+    });
+
+    return data;
+}
+
+
+/* ==========================================================
    SUBMIT TO GOOGLE FORM
    ========================================================== */
 
-function submitToGoogleForm(service, formData) {
+function submitToGoogleForm(
+    service,
+    formData
+) {
 
-    const config = GOOGLE_FORMS[service];
+    const config =
+        GOOGLE_FORMS[service];
 
-    if (!isGoogleFormConfigured(service)) {
+
+    if (
+        !isGoogleFormConfigured(
+            service
+        )
+    ) {
 
         showSuccess(
             "Google Form configuration is incomplete.",
@@ -253,36 +430,12 @@ function submitToGoogleForm(service, formData) {
     }
 
 
-    /* ------------------------------------------------------
-       Hidden iframe
-       ------------------------------------------------------ */
+    /* Create hidden iframe */
 
-    let iframe =
-        document.getElementById(
-            "googleFormSubmitFrame"
-        );
-
-    if (!iframe) {
-
-        iframe =
-            document.createElement("iframe");
-
-        iframe.id =
-            "googleFormSubmitFrame";
-
-        iframe.name =
-            "googleFormSubmitFrame";
-
-        iframe.style.display =
-            "none";
-
-        document.body.appendChild(iframe);
-    }
+    getGoogleFormIframe();
 
 
-    /* ------------------------------------------------------
-       Temporary Google Form
-       ------------------------------------------------------ */
+    /* Temporary form */
 
     const googleForm =
         document.createElement("form");
@@ -299,40 +452,83 @@ function submitToGoogleForm(service, formData) {
     googleForm.style.display =
         "none";
 
+    googleForm.acceptCharset =
+        "UTF-8";
 
-    /* ------------------------------------------------------
-       Add Google Form fields
-       ------------------------------------------------------ */
 
-    Object.keys(formData).forEach(key => {
+    let fieldCount = 0;
 
-        const entryId =
-            config.fields[key];
 
-        /*
-         * Ignore fields that do not have a Google Form
-         * mapping.
-         */
+    /* Add Google Form fields */
 
-        if (!entryId) {
-            return;
+    Object.keys(formData).forEach(
+        key => {
+
+            const entryId =
+                config.fields[key];
+
+            if (!entryId) {
+                return;
+            }
+
+
+            let value =
+                formData[key];
+
+
+            /* Handle checkbox arrays */
+
+            if (Array.isArray(value)) {
+
+                value =
+                    value.join(", ");
+            }
+
+
+            if (
+                value === null ||
+                value === undefined
+            ) {
+
+                value = "";
+            }
+
+
+            const input =
+                document.createElement(
+                    "input"
+                );
+
+            input.type =
+                "hidden";
+
+            input.name =
+                entryId;
+
+            input.value =
+                String(value);
+
+
+            googleForm.appendChild(
+                input
+            );
+
+            fieldCount++;
         }
+    );
 
-        const input =
-            document.createElement("input");
 
-        input.type =
-            "hidden";
+    /* Make sure fields exist */
 
-        input.name =
-            entryId;
+    if (fieldCount === 0) {
 
-        input.value =
-            formData[key] ?? "";
+        showSuccess(
+            "No Google Form fields are configured.",
+            true
+        );
 
-        googleForm.appendChild(input);
-
-    });
+        return false;
+    }
 
 
     document.body.appendChild(
@@ -340,22 +536,29 @@ function submitToGoogleForm(service, formData) {
     );
 
 
-    /* ------------------------------------------------------
-       Submit
-       ------------------------------------------------------ */
+    /* Submit */
 
     googleForm.submit();
 
 
-    /* ------------------------------------------------------
-       Remove temporary form
-       ------------------------------------------------------ */
+    /*
+     * Remove temporary form
+     * after submission starts.
+     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        googleForm.remove();
+            if (
+                googleForm.parentNode
+            ) {
 
-    }, 2000);
+                googleForm.remove();
+            }
+
+        },
+        5000
+    );
 
 
     return true;
@@ -375,6 +578,7 @@ function showSuccess(
         document.getElementById(
             "successMessage"
         );
+
 
     if (!messageBox) {
 
@@ -407,63 +611,656 @@ function showSuccess(
 
 
 /* ==========================================================
-   RESET FORM
+   VALIDATE SERVICE FORM
    ========================================================== */
 
-function resetServiceForm(form) {
-
-    form.reset();
-
-
-    const sonFields =
-        document.getElementById(
-            "sonFields"
-        );
-
-    const daughterFields =
-        document.getElementById(
-            "daughterFields"
-        );
+function validateServiceForm(
+    formData
+) {
 
 
-    if (sonFields) {
-        sonFields.innerHTML = "";
+    /* Mobile */
+
+    if (formData.mobile) {
+
+        if (
+            !validateMobile(
+                formData.mobile
+            )
+        ) {
+
+            showSuccess(
+                "Please enter a valid 10-digit mobile number.",
+                true
+            );
+
+            return false;
+        }
     }
 
 
-    if (daughterFields) {
-        daughterFields.innerHTML = "";
+    /* Pincode */
+
+    if (formData.pincode) {
+
+        if (
+            !validatePincode(
+                formData.pincode
+            )
+        ) {
+
+            showSuccess(
+                "Please enter a valid 6-digit pincode.",
+                true
+            );
+
+            return false;
+        }
+    }
+
+
+    /* Health child count */
+
+    if (
+        formData.sonCount !==
+        undefined
+    ) {
+
+        const sonCount =
+            Number(
+                formData.sonCount
+            );
+
+        if (
+            !Number.isInteger(
+                sonCount
+            ) ||
+            sonCount < 0 ||
+            sonCount > 2
+        ) {
+
+            showSuccess(
+                "Son count must be between 0 and 2.",
+                true
+            );
+
+            return false;
+        }
+    }
+
+
+    if (
+        formData.daughterCount !==
+        undefined
+    ) {
+
+        const daughterCount =
+            Number(
+                formData.daughterCount
+            );
+
+        if (
+            !Number.isInteger(
+                daughterCount
+            ) ||
+            daughterCount < 0 ||
+            daughterCount > 2
+        ) {
+
+            showSuccess(
+                "Daughter count must be between 0 and 2.",
+                true
+            );
+
+            return false;
+        }
+    }
+
+
+    return true;
+}
+
+
+/* ==========================================================
+   SAVE SUBMISSION STATUS
+   ========================================================== */
+
+function saveSubmissionStatus() {
+
+    try {
+
+        sessionStorage.setItem(
+            SUBMISSION_STORAGE_KEY,
+            "Your enquiry has been submitted successfully. We will contact you soon."
+        );
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            "Unable to save submission status:",
+            error
+        );
+
+        return false;
     }
 }
 
 
 /* ==========================================================
-   MAIN FORM HANDLER
+   THANK YOU POPUP
+   ========================================================== */
+
+function showThankYouPopup(
+    message
+) {
+
+    const oldPopup =
+        document.getElementById(
+            "thankYouPopup"
+        );
+
+
+    if (oldPopup) {
+        oldPopup.remove();
+    }
+
+
+    /* Overlay */
+
+    const overlay =
+        document.createElement(
+            "div"
+        );
+
+    overlay.id =
+        "thankYouPopup";
+
+
+    overlay.style.position =
+        "fixed";
+
+    overlay.style.inset =
+        "0";
+
+    overlay.style.zIndex =
+        "99999";
+
+    overlay.style.display =
+        "flex";
+
+    overlay.style.alignItems =
+        "center";
+
+    overlay.style.justifyContent =
+        "center";
+
+    overlay.style.padding =
+        "20px";
+
+    overlay.style.background =
+        "rgba(0,0,0,0.55)";
+
+
+    /* Popup */
+
+    const popup =
+        document.createElement(
+            "div"
+        );
+
+    popup.style.width =
+        "100%";
+
+    popup.style.maxWidth =
+        "420px";
+
+    popup.style.boxSizing =
+        "border-box";
+
+    popup.style.padding =
+        "30px 25px";
+
+    popup.style.borderRadius =
+        "18px";
+
+    popup.style.background =
+        "#ffffff";
+
+    popup.style.textAlign =
+        "center";
+
+    popup.style.boxShadow =
+        "0 20px 60px rgba(0,0,0,0.25)";
+
+
+    /* Success icon */
+
+    const icon =
+        document.createElement(
+            "div"
+        );
+
+    icon.textContent =
+        "✓";
+
+    icon.style.width =
+        "70px";
+
+    icon.style.height =
+        "70px";
+
+    icon.style.margin =
+        "0 auto 18px";
+
+    icon.style.borderRadius =
+        "50%";
+
+    icon.style.background =
+        "#16a34a";
+
+    icon.style.color =
+        "#ffffff";
+
+    icon.style.fontSize =
+        "42px";
+
+    icon.style.fontWeight =
+        "700";
+
+    icon.style.display =
+        "flex";
+
+    icon.style.alignItems =
+        "center";
+
+    icon.style.justifyContent =
+        "center";
+
+
+    /* Title */
+
+    const title =
+        document.createElement(
+            "h2"
+        );
+
+    title.textContent =
+        "Thank You!";
+
+    title.style.margin =
+        "0 0 10px";
+
+    title.style.fontSize =
+        "28px";
+
+    title.style.color =
+        "#111827";
+
+
+    /* Message */
+
+    const text =
+        document.createElement(
+            "p"
+        );
+
+    text.textContent =
+        message ||
+        "Your form has been submitted successfully.";
+
+    text.style.margin =
+        "0 0 24px";
+
+    text.style.fontSize =
+        "16px";
+
+    text.style.lineHeight =
+        "1.6";
+
+    text.style.color =
+        "#4b5563";
+
+
+    /* Button */
+
+    const button =
+        document.createElement(
+            "button"
+        );
+
+    button.type =
+        "button";
+
+    button.textContent =
+        "OK";
+
+    button.style.border =
+        "none";
+
+    button.style.padding =
+        "12px 32px";
+
+    button.style.borderRadius =
+        "10px";
+
+    button.style.background =
+        "#16a34a";
+
+    button.style.color =
+        "#ffffff";
+
+    button.style.fontSize =
+        "16px";
+
+    button.style.fontWeight =
+        "600";
+
+    button.style.cursor =
+        "pointer";
+
+
+    /* Close */
+
+    function closePopup() {
+
+        overlay.remove();
+    }
+
+
+    button.addEventListener(
+        "click",
+        closePopup
+    );
+
+
+    overlay.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target ===
+                overlay
+            ) {
+
+                closePopup();
+            }
+        }
+    );
+
+
+    popup.appendChild(
+        icon
+    );
+
+    popup.appendChild(
+        title
+    );
+
+    popup.appendChild(
+        text
+    );
+
+    popup.appendChild(
+        button
+    );
+
+    overlay.appendChild(
+        popup
+    );
+
+    document.body.appendChild(
+        overlay
+    );
+}
+
+
+/* ==========================================================
+   CHECK SUBMISSION AFTER RETURNING HOME
+   ========================================================== */
+
+function checkFormSubmission() {
+
+    let message = null;
+
+
+    try {
+
+        message =
+            sessionStorage.getItem(
+                SUBMISSION_STORAGE_KEY
+            );
+
+    } catch (error) {
+
+        console.error(
+            "Unable to read submission status:",
+            error
+        );
+
+        return;
+    }
+
+
+    if (!message) {
+        return;
+    }
+
+
+    /* Remove immediately */
+
+    try {
+
+        sessionStorage.removeItem(
+            SUBMISSION_STORAGE_KEY
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Unable to clear submission status:",
+            error
+        );
+    }
+
+
+    /* Show popup */
+
+    setTimeout(
+        () => {
+
+            showThankYouPopup(
+                message
+            );
+
+        },
+        300
+    );
+}
+
+
+/* ==========================================================
+   NUMBER INPUT RESTRICTION
+   ========================================================== */
+
+function setupChildCountInput(
+    id
+) {
+
+    const input =
+        document.getElementById(id);
+
+    if (!input) {
+        return;
+    }
+
+
+    input.type =
+        "number";
+
+    input.min =
+        "0";
+
+    input.max =
+        "2";
+
+    input.step =
+        "1";
+
+
+    input.addEventListener(
+        "input",
+        function () {
+
+            let value =
+                parseInt(
+                    this.value,
+                    10
+                );
+
+
+            if (
+                Number.isNaN(value)
+            ) {
+
+                this.value = "";
+
+                return;
+            }
+
+
+            if (value < 0) {
+                value = 0;
+            }
+
+
+            if (value > 2) {
+                value = 2;
+            }
+
+
+            this.value =
+                String(value);
+        }
+    );
+}
+
+
+/* ==========================================================
+   MOBILE INPUT RESTRICTION
+   ========================================================== */
+
+function setupMobileInputs() {
+
+    document
+        .querySelectorAll(
+            'input[name="mobile"]'
+        )
+        .forEach(
+            input => {
+
+                input.addEventListener(
+                    "input",
+                    function () {
+
+                        this.value =
+                            this.value
+                                .replace(
+                                    /\D/g,
+                                    ""
+                                )
+                                .slice(
+                                    0,
+                                    10
+                                );
+                    }
+                );
+            }
+        );
+}
+
+
+/* ==========================================================
+   PINCODE INPUT RESTRICTION
+   ========================================================== */
+
+function setupPincodeInputs() {
+
+    document
+        .querySelectorAll(
+            'input[name="pincode"]'
+        )
+        .forEach(
+            input => {
+
+                input.addEventListener(
+                    "input",
+                    function () {
+
+                        this.value =
+                            this.value
+                                .replace(
+                                    /\D/g,
+                                    ""
+                                )
+                                .slice(
+                                    0,
+                                    6
+                                );
+                    }
+                );
+            }
+        );
+}
+
+
+/* ==========================================================
+   MAIN
    ========================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        /* --------------------------------------------------
-           Show thank-you popup after returning to home page
-           -------------------------------------------------- */
 
-        const submittedMessage =
-            sessionStorage.getItem("formSubmitted");
+        /* ==============================================
+           CHECK THANK YOU MESSAGE
+           ============================================== */
 
-        if (submittedMessage) {
+        checkFormSubmission();
 
-            sessionStorage.removeItem("formSubmitted");
 
-            setTimeout(() => {
+        /* ==============================================
+           SETUP CHILD COUNTS
+           ============================================== */
 
-                alert("🎉 " + submittedMessage);
+        setupChildCountInput(
+            "sonCount"
+        );
 
-            }, 300);
+        setupChildCountInput(
+            "daughterCount"
+        );
 
-        }
 
+        /* ==============================================
+           MOBILE
+           ============================================== */
+
+        setupMobileInputs();
+
+
+        /* ==============================================
+           PINCODE
+           ============================================== */
+
+        setupPincodeInputs();
+
+
+        /* ==============================================
+           SERVICE FORMS
+           ============================================== */
 
         const forms =
             document.querySelectorAll(
@@ -471,256 +1268,97 @@ document.addEventListener(
             );
 
 
-        forms.forEach(form => {
+        forms.forEach(
+            form => {
 
-            form.addEventListener(
-                "submit",
-                function (event) {
+                form.addEventListener(
+                    "submit",
+                    function (event) {
 
-                    event.preventDefault();
-
-
-                    const service =
-                        form.dataset.service;
+                        event.preventDefault();
 
 
-                    if (!GOOGLE_FORMS[service]) {
-
-                        showSuccess(
-                            "Invalid service configuration.",
-                            true
-                        );
-
-                        return;
-                    }
+                        const service =
+                            form.dataset.service;
 
 
-                    /* --------------------------------------
-                       Collect form data
-                       -------------------------------------- */
-
-                    const formData = {};
-
-
-                    const inputs =
-                        form.querySelectorAll(
-                            "input, select, textarea"
-                        );
-
-
-                    inputs.forEach(input => {
-
-                        if (!input.name) {
-                            return;
-                        }
-
+                        /* Check service */
 
                         if (
-                            input.type === "radio" &&
-                            !input.checked
-                        ) {
-                            return;
-                        }
-
-
-                        if (
-                            input.type === "checkbox" &&
-                            !input.checked
-                        ) {
-                            return;
-                        }
-
-
-                        formData[input.name] =
-                            input.value.trim();
-
-                    });
-
-
-                    /* --------------------------------------
-                       Mobile validation
-                       -------------------------------------- */
-
-                    if (formData.mobile) {
-
-                        if (
-                            !validateMobile(
-                                formData.mobile
-                            )
+                            !service ||
+                            !GOOGLE_FORMS[
+                                service
+                            ]
                         ) {
 
                             showSuccess(
-                                "Please enter a valid 10-digit mobile number.",
+                                "Invalid service configuration.",
                                 true
                             );
 
                             return;
                         }
-                    }
 
 
-                    /* --------------------------------------
-                       Pincode validation
-                       -------------------------------------- */
+                        /* Collect data */
 
-                    if (formData.pincode) {
+                        const formData =
+                            collectFormData(
+                                form
+                            );
+
+
+                        /* Validate */
 
                         if (
-                            !validatePincode(
-                                formData.pincode
+                            !validateServiceForm(
+                                formData
                             )
                         ) {
 
-                            showSuccess(
-                                "Please enter a valid 6-digit pincode.",
-                                true
-                            );
-
                             return;
                         }
-                    }
 
 
-                    /* --------------------------------------
-                       Submit
-                       -------------------------------------- */
+                        /* Submit */
 
-                    const submitted =
-                        submitToGoogleForm(
-                            service,
-                            formData
+                        const submitted =
+                            submitToGoogleForm(
+                                service,
+                                formData
+                            );
+
+
+                        if (!submitted) {
+                            return;
+                        }
+
+
+                        /* Save status */
+
+                        saveSubmissionStatus();
+
+
+                        /*
+                         * Give Google Form POST
+                         * time to start.
+                         */
+
+                        setTimeout(
+                            () => {
+
+                                window.location.href =
+                                    HOME_PAGE;
+
+                            },
+                            2000
                         );
-
-
-                    if (!submitted) {
-                        return;
-                    }
-
-
-                    /* --------------------------------------
-                       Submit successful
-                       -------------------------------------- */
-
-                    setTimeout(() => {
-
-                        // Save message for home page
-                        sessionStorage.setItem(
-                            "formSubmitted",
-                            "Thank you! Your form has been submitted successfully."
-                        );
-
-                        // Go back to home page
-                        window.location.href =
-                            "index.html";
-
-                    }, 1000);
-
-                }
-            );
-
-        });
-
-
-        /* ==================================================
-           HEALTH - SON COUNT
-           ================================================== */
-
-        const sonCount =
-            document.getElementById(
-                "sonCount"
-            );
-
-
-        if (sonCount) {
-
-            sonCount.addEventListener(
-                "change",
-                function () {
-
-                    updateChildrenFields(
-                        "son"
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* ==================================================
-           HEALTH - DAUGHTER COUNT
-           ================================================== */
-
-        const daughterCount =
-            document.getElementById(
-                "daughterCount"
-            );
-
-
-        if (daughterCount) {
-
-            daughterCount.addEventListener(
-                "change",
-                function () {
-
-                    updateChildrenFields(
-                        "daughter"
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* ==================================================
-           MOBILE INPUT
-           ================================================== */
-
-        document
-            .querySelectorAll(
-                'input[name="mobile"]'
-            )
-            .forEach(input => {
-
-                input.addEventListener(
-                    "input",
-                    function () {
-
-                        this.value =
-                            this.value
-                                .replace(/\D/g, "")
-                                .slice(0, 10);
 
                     }
                 );
 
-            });
-
-
-        /* ==================================================
-           PINCODE INPUT
-           ================================================== */
-
-        document
-            .querySelectorAll(
-                'input[name="pincode"]'
-            )
-            .forEach(input => {
-
-                input.addEventListener(
-                    "input",
-                    function () {
-
-                        this.value =
-                            this.value
-                                .replace(/\D/g, "")
-                                .slice(0, 6);
-
-                    }
-                );
-
-            });
+            }
+        );
 
     }
 );
