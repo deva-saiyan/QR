@@ -29,37 +29,18 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     health: {
-
-        url:
-            "https://docs.google.com/forms/d/e/1FAIpQLSdGmQ5HoBpfvFnlUL6tk7Z1yZHZLXMk6DC00fY96E33LO5urg/formResponse",
-
-        fields: {
-
-            name:
-                "entry.1449005772",
-
-            gender:
-                "entry.1685270148",
-
-            selfDob:
-                "entry.1960516808",
-
-            spouseDob:
-                "entry.1842912509",
-
-            sonCount:
-                "entry.1693510977",
-
-            daughterCount:
-                "entry.262002855",
-
-            pincode:
-                "entry.628104915",
-
-            mobile:
-                "entry.1120204368"
-        }
-    },
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSf_bXP2t8pLTS5VcpgBclIebjeuqAcuXHsXJgKxoG_3QQIMmw/formResponse",
+    fields: {
+      name: "entry.1204855230",
+      gender: "entry.843674768",
+      selfDob: "entry.2070990780",
+      spouseDob: "entry.1462691193",
+      sonCount: "entry.1585702714",
+      daughterCount: "entry.1338582816",
+      pincode: "entry.366285982",
+      mobile: "entry.1783426719"
+    }
+  },
 
 
     /* ======================================================
@@ -122,28 +103,16 @@ const GOOGLE_FORMS = {
        ====================================================== */
 
     mutual: {
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSfKXmrNP0fwCHNaxazl2Ia9LI15Y3fHu6dhtMDv9yc5vh7jLw/formResponse",
+    fields: {
+      name: "entry.2092238618",
+      dob: "entry.479301265",
+      mobile: "entry.588393791",
+      sip: "entry.331887717",
+      goal: "entry.262234091"
+    }
+  },
 
-        url:
-            "https://docs.google.com/forms/d/e/1FAIpQLScUTTCKMWgisguRU9e-Nb6DirDVIWrT9nTKwEeSKJy1PegEbw/formResponse",
-
-        fields: {
-
-            name:
-                "entry.1213373070",
-
-            dob:
-                "entry.1869690058",
-
-            mobile:
-                "entry.952409558",
-
-            sip:
-                "entry.1717212747",
-
-            goal:
-                "entry.1522553132"
-        }
-    },
 
 
     /* ======================================================
@@ -173,27 +142,15 @@ const GOOGLE_FORMS = {
        LEGAL ADVICE
        ====================================================== */
 
-    legal: {
-
-        url:
-            "https://docs.google.com/forms/d/e/1FAIpQLSf6-cgMAAHDJnMx8ccGXKSVlqukIwiIsacK4LcQPefzGzMkVA/formResponse",
-
-        fields: {
-
-            name:
-                "entry.559352220",
-
-            mobile:
-                "entry.877086558",
-
-            requirement:
-                "entry.924523986",
-
-            description:
-                "entry.186230675"
-        }
+   legal: {
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSc_u3poTllJkAFWT-wBGBDLB634g1wgCMMoW6uNpOWp8VPFCA/formResponse",
+    fields: {
+      name: "entry.694889122",
+      mobile: "entry.1631002797",
+      requirement: "entry.2051891266",
+      description: "entry.1565789594"
     }
-
+  }
 };
 
 
